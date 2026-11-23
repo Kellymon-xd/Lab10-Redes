@@ -52,7 +52,7 @@ jobs:
       - name: Smoke test de PagosYA
         run: |
           for i in $(seq 1 30); do
-            RESPUESTA=$(curl -fsS --max-time 2 http://localhost:8080/health 2>/dev/null) || true
+            RESPUESTA=$(curl -fsS --max-time 2 http://localhost:8080/health-fallo 2>/dev/null) || true
 
             if [ "$RESPUESTA" = "ok" ]; then
               echo "SMOKE TEST EXITOSO"
